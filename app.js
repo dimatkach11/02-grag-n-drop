@@ -14,7 +14,6 @@ items.forEach(item => {
 
 function dragstart(e) {
   const target = e.target
-  console.log('drag start', target);
 
   target.classList.add('hold')
   setTimeout(() => {
@@ -27,7 +26,6 @@ items.forEach(item => {
 
 function dragend(e) {
   const target = e.target
-  // console.log('drag end', target);
 
   target.className = 'item'
 }
@@ -52,7 +50,6 @@ function dragdrop(e) {
   items.forEach(item => {
     if (item.classList.contains('hold')) {
       if(target.classList.contains('item')) {
-        console.log(target);
         target.parentNode.insertBefore(item, target)
       } else {
         target.append(item)

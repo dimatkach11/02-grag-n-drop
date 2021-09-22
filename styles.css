@@ -23,7 +23,7 @@ body {
   flex: 1;
   margin: 0 .1rem;
   box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
-  padding: 0.8rem 1rem;
+  padding: 1.2rem 1rem;
   color: #fff;
 }
 
@@ -80,7 +80,7 @@ body {
 }
 
 .hold {
- border: 2px solid red;
+ border: 2px solid #2f51be;
 }
 
 .hide {
