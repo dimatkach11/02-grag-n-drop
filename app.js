@@ -1,4 +1,4 @@
-const item = document.querySelector('.item')
+const items = document.querySelectorAll('.item')
 const placeHolders = document.querySelectorAll('.placeholder')
 
 placeHolders.forEach(placeHolder => {
@@ -8,19 +8,22 @@ placeHolders.forEach(placeHolder => {
   placeHolder.addEventListener('drop', dragdrop)
 })
 
-item.addEventListener('dragstart', dragstart )
+items.forEach(item => {
+  item.addEventListener('dragstart', dragstart )
+})
 
 function dragstart(e) {
   const target = e.target
-  // console.log('drag start', target);
+  console.log('drag start', target);
 
   target.classList.add('hold')
   setTimeout(() => {
     target.classList.add('hide')
   },0)
 }
-
-item.addEventListener('dragend', dragend )
+items.forEach(item => {
+  item.addEventListener('dragend', dragend )
+})
 
 function dragend(e) {
   const target = e.target
@@ -46,6 +49,15 @@ function dragleave(e) {
 
 function dragdrop(e) {
   const target = e.target
-  target.append(item)
+  items.forEach(item => {
+    if (item.classList.contains('hold')) {
+      if(target.classList.contains('item')) {
+        console.log(target);
+        target.parentNode.insertBefore(item, target)
+      } else {
+        target.append(item)
+      }
+    }
+  })
   target.classList.remove('hovered')
 }

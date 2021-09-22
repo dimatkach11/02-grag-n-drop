@@ -8,38 +8,37 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: #e5e5e5;
   display: flex;
-  padding-top: 5rem;
+  padding-top: 4rem;
   justify-content: center;
-  overflow: hidden;
   margin: 0;
 }
 
 .row {
   display: flex;
-  width: 600px;
+  width: 98vw;
   justify-content: space-between;
-  margin-bottom: 1rem;
 }
 
 .col-header {
-  width: 150px;
+  flex: 1;
+  margin: 0 .1rem;
   box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
-  border-radius: 20px;
   padding: 0.8rem 1rem;
   color: #fff;
 }
 
 .item {
-  width: 150px;
-  height: 66px;
-  border: 1px solid #eee;
+  flex: 0;
+  min-height: 66px;
+  border: 2px solid #c4e6ff;
   box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
-  border-radius: 20px;
   background: #f7f6f7;
-  padding: 0.8rem 1rem;
+  padding: 1.2rem 1rem;
   color: #828282;
   text-align: center;
   cursor: grab;
+  margin: .2rem;
+  background-color: #dbefff;
 }
 
 .item:active {
@@ -47,8 +46,17 @@ body {
 }
 
 .placeholder {
-  width: 150px;
-  height: 66px;
+  margin: 0 .1rem;
+  flex: 1;
+  min-height: 50vh;
+  padding-bottom: 10vh;
+}
+
+.placeholder:nth-child(2n) {
+  background-color: #ffffff;
+}
+.placeholder:nth-child(2n+1) {
+  background-color: #f3f3f3;
 }
 
 .start {
@@ -59,8 +67,16 @@ body {
   background: linear-gradient(90deg, #209cff 0%, #68e0cf 100%);
 }
 
-.done {
+.test {
   background: linear-gradient(90deg, #84fab0 0%, #8fd3f4 100%);
+}
+
+.close {
+  background: linear-gradient(90deg, #ff3e0e 0%, #cfda34 100%);
+}
+
+.info {
+  background: linear-gradient(90deg, #1838a3 0%, #8ff4ef 100%);
 }
 
 .hold {
